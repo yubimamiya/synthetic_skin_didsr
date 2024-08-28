@@ -1,0 +1,38 @@
+/home/yubi.mamiya/.bashrc: line 13: /opt/sge_root/betsy/common/settings.sh: No such file or directory
+==== 20240808-003354 start of job ITA (149612) on node bc015 on cluster cdrh_hpc_luna
+Allocated nodes: bc015
+Partition: short
+Thu Aug  8 00:33:54 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           Off |   00000000:86:00.0 Off |                    0 |
+| N/A   27C    P0             40W /  300W |       0MiB /  32768MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA_VISIBLE_DEVICES=0
+mask shape:  (64, 64, 3)
+image shape:  (64, 64, 3)
+Traceback (most recent call last):
+  File "/projects01/VICTRE/yubi.mamiya/ITA/ITA_luna.py", line 66, in <module>
+    L_channel = np.multiply(lab[:,:,0], (mask==0))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: operands could not be broadcast together with shapes (64,64) (64,64,3) 
+
+real	0m1.830s
+user	0m1.175s
+sys	0m0.305s
+Duration: 3 seconds elapsed.
+==== 20240808-003357 end of job ITA (149612) on node bc015 on cluster cdrh_hpc_luna: EXIT_STATUS=1
